@@ -1,0 +1,58 @@
+<p-table [value]="getPokemon()" [tableStyle]="{ 'min-width': '60rem' }">
+  <ng-template #caption>
+    <div class="flex items-center justify-between">
+      <span class="text-xl font-bold">Products</span>
+    </div>
+  </ng-template>
+  <ng-template #header>
+    <tr>
+      <th>Name</th>
+      <th>Front Image</th>
+      <th>Front Shiny</th>
+      <th>Back Default</th>
+      <th>Back Shiny</th>
+      <th>Back Shiny Female</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-item>
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>
+        <img
+          [src]="item.sprites.front_default ?? ''"
+          [alt]="item.sprites.front_default ?? ''"
+          front_shiny
+          class="w-24 rounded"
+        />
+      </td>
+      <td>
+        <img
+          [src]="item.sprites.front_shiny ?? ''"
+          [alt]="item.sprites.front_shiny ?? ''"
+          class="w-24 rounded"
+        />
+      </td>
+      <td>
+        <img
+          [src]="item.sprites.back_default ?? ''"
+          [alt]="item.sprites.back_default ?? ''"
+          class="w-24 rounded"
+        />
+      </td>
+      <td>
+        <img
+          [src]="item.sprites.back_shiny ?? ''"
+          [alt]="item.sprites.back_shiny ?? ''"
+          class="w-24 rounded"
+        />
+      </td>
+      <td>
+        <img
+          [src]="item.sprites.back_shiny_female ?? ''"
+          [alt]="item.sprites.back_shiny_female ?? ''"
+          class="w-24 rounded"
+        />
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
