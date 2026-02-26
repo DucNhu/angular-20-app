@@ -1,0 +1,119 @@
+/* App styles */
+nav {
+  background: var(--p-surface-0);
+  border-bottom: 1px solid var(--p-surface-border);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+nav a {
+  color: var(--p-text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--p-border-radius);
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background: var(--p-surface-hover);
+}
+
+/* Dark mode support */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: var(--p-surface-0);
+  color: var(--p-text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.country-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.country-flag {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.country-label {
+  font-size: 1rem;
+  color: var(--p-text-color);
+}
+
+
+/* Target header year-month trong nz-range-picker / nz-date-picker */
+.ant-picker-header-view {
+  display: flex !important;
+  flex-direction: row-reverse !important; /* Đảo thứ tự: năm sẽ về sau tháng */
+  justify-content: center !important;     /* Giữ cân giữa */
+  align-items: center !important;
+  gap: 4px !important;                    /* Khoảng cách giữa tháng và năm */
+}
+
+/* Đảm bảo nút month/year hiển thị đúng thứ tự sau khi đảo */
+.ant-picker-header-view > button {
+  order: unset !important;                /* Không cần reorder thêm */
+  margin: 0 !important;
+}
+
+/* Fix cho trường hợp có nút year riêng (nếu hiển thị "2026" riêng) */
+.ant-picker-header-view > button:nth-child(1) {
+  order: 2;  /* Năm về sau */
+}
+
+.ant-picker-header-view > button:nth-child(2) {
+  order: 1;  /* Tháng về trước */
+}
+
+/* Optional: Làm cho text đẹp hơn, thêm khoảng cách */
+.ant-picker-header-view button {
+  font-weight: 500;
+  color: #000;
+}
+
+/* Nếu vẫn thấy "thg" thay vì "Tháng", bạn có thể dùng ::after để thay text (nâng cao) */
+.ant-picker-header-view button[title*="thg"]::after {
+  content: attr(title);  /* Lấy title gốc làm content */
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: visible;
+}
+.ant-picker-header-view button[title*="thg"] {
+  visibility: hidden;  /* Ẩn text gốc */
+}
+
+/* Sidebar PrimeNG custom style */
+.custom-sidebar .p-panelmenu .p-panelmenu-header {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+.custom-sidebar .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--p-text-color);
+  font-weight: 500;
+}
+.custom-sidebar .p-panelmenu .p-panelmenu-header .pi {
+  margin-right: 0.5rem;
+}
+.custom-sidebar .p-panelmenu .p-menuitem.active .p-menuitem-link {
+  background: var(--p-primary-color, #0F5A43);
+  color: #fff;
+  border-radius: 8px;
+}
+.custom-sidebar .p-panelmenu .p-menuitem-link {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.custom-sidebar .p-panelmenu .p-menuitem-link:hover {
+  background: var(--p-primary-color, #0F5A43);
+  color: #fff;
+}

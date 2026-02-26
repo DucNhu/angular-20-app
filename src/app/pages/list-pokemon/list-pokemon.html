@@ -1,9 +1,21 @@
-<p-table [value]="getPokemon()" [tableStyle]="{ 'min-width': '60rem' }">
-  <ng-template #caption>
-    <div class="flex items-center justify-between">
-      <span class="text-xl font-bold">Products</span>
-    </div>
-  </ng-template>
+<p-table
+  #pokemonTable
+  [value]="getPokemon()"
+  [rowTrackBy]="trackByFn"
+  [paginator]="true"
+  [rows]="rows"
+  [first]="first"
+  [rowsPerPageOptions]="rowsPerPageOptions"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Hiển thị {first} đến {last} trong tổng số {totalRecords} mục"
+  (onPage)="onPageChange($event)"
+  paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+  styleClass="p-datatable-striped"
+>
+  <!-- [virtualScroll]="true"
+  [virtualScrollItemSize]="60"
+  [scrollHeight]="'600px'" -->
+
   <ng-template #header>
     <tr>
       <th>Name</th>
@@ -15,7 +27,7 @@
     </tr>
   </ng-template>
   <ng-template #body let-item>
-    <tr>
+    <tr (click)="onRowClick(item)" class="cursor-pointer hover:bg-gray-100">
       <td>{{ item.name }}</td>
       <td>
         <img
@@ -56,3 +68,13 @@
     </tr>
   </ng-template>
 </p-table>
+
+@defer (on hover(pokemonTable); on interaction(pokemonTable)) {
+  <app-pokemon-detail-dialog
+    [pokemon]="selectedPokemon()"
+    [visible]="dialogVisible()"
+    (visibleChange)="dialogVisible.set($event)"
+  ></app-pokemon-detail-dialog>
+} @placeholder {
+  <!-- Dialog will be loaded on hover or interaction with table -->
+}

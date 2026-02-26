@@ -1,0 +1,17 @@
+.pokemon-detail-container {
+  padding: 1rem;
+}
+
+.pokemon-header {
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.sprite-item img {
+  max-width: 200px;
+  height: auto;
+}
+
+.stat-item {
+  margin-bottom: 0.75rem;
+}

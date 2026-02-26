@@ -1,0 +1,123 @@
+<div class="container mx-auto p-8">
+  <h1 class="text-3xl font-bold mb-8">Custom PrimeNG Button Theme Demo</h1>
+
+  <!-- Button Variants -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Button Variants</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Primary" severity="primary" (onClick)="handleClick()"></p-button>
+      <p-button label="Secondary" severity="secondary" (onClick)="handleClick()"></p-button>
+      <p-button label="Success" severity="success" (onClick)="handleClick()"></p-button>
+      <p-button label="Info" severity="info" (onClick)="handleClick()"></p-button>
+      <p-button label="Warning" severity="warn" (onClick)="handleClick()"></p-button>
+      <p-button label="Danger" severity="danger" (onClick)="handleClick()"></p-button>
+    </div>
+  </section>
+
+  <!-- Outlined Buttons -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Outlined Buttons</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Primary Outlined" severity="primary" [outlined]="true"></p-button>
+      <p-button label="Secondary Outlined" severity="secondary" [outlined]="true"></p-button>
+      <p-button label="Success Outlined" severity="success" [outlined]="true"></p-button>
+      <p-button label="Info Outlined" severity="info" [outlined]="true"></p-button>
+      <p-button label="Warning Outlined" severity="warn" [outlined]="true"></p-button>
+      <p-button label="Danger Outlined" severity="danger" [outlined]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Text Buttons -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Text Buttons</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Primary Text" severity="primary" [text]="true"></p-button>
+      <p-button label="Secondary Text" severity="secondary" [text]="true"></p-button>
+      <p-button label="Success Text" severity="success" [text]="true"></p-button>
+      <p-button label="Info Text" severity="info" [text]="true"></p-button>
+      <p-button label="Warning Text" severity="warn" [text]="true"></p-button>
+      <p-button label="Danger Text" severity="danger" [text]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Link Buttons -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Link Buttons</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Primary Link" severity="primary" [link]="true"></p-button>
+      <p-button label="Secondary Link" severity="secondary" [link]="true"></p-button>
+      <p-button label="Success Link" severity="success" [link]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Button Sizes -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Button Sizes</h2>
+    <div class="flex flex-wrap items-center gap-4">
+      <p-button label="Small" size="small" severity="primary"></p-button>
+      <p-button label="Normal" severity="primary"></p-button>
+      <p-button label="Large" size="large" severity="primary"></p-button>
+    </div>
+  </section>
+
+  <!-- Rounded Buttons -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Rounded Buttons</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Rounded Primary" severity="primary" [rounded]="true"></p-button>
+      <p-button label="Rounded Success" severity="success" [rounded]="true"></p-button>
+      <p-button label="Rounded Danger" severity="danger" [rounded]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Icon Buttons -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Icon Buttons</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button icon="pi pi-check" severity="success" [rounded]="true"></p-button>
+      <p-button icon="pi pi-times" severity="danger" [rounded]="true"></p-button>
+      <p-button icon="pi pi-info-circle" severity="info" [rounded]="true"></p-button>
+      <p-button icon="pi pi-star" severity="warn" [rounded]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Buttons with Icons -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Buttons with Icons</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Save" icon="pi pi-check" severity="success"></p-button>
+      <p-button label="Delete" icon="pi pi-trash" severity="danger"></p-button>
+      <p-button label="Edit" icon="pi pi-pencil" severity="primary"></p-button>
+      <p-button label="Download" icon="pi pi-download" severity="info" [outlined]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Loading State -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Loading State</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button 
+        label="Loading" 
+        severity="primary" 
+        [loading]="loading"
+        (onClick)="toggleLoading()">
+      </p-button>
+      <p-button 
+        label="Loading Success" 
+        severity="success" 
+        [loading]="loading"
+        (onClick)="toggleLoading()">
+      </p-button>
+    </div>
+  </section>
+
+  <!-- Disabled State -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Disabled State</h2>
+    <div class="flex flex-wrap gap-4">
+      <p-button label="Disabled Primary" severity="primary" [disabled]="true"></p-button>
+      <p-button label="Disabled Success" severity="success" [disabled]="true"></p-button>
+      <p-button label="Disabled Outlined" severity="primary" [outlined]="true" [disabled]="true"></p-button>
+    </div>
+  </section>
+</div>

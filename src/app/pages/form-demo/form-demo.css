@@ -1,0 +1,187 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--p-text-color, #333);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+}
+
+/* Utility classes */
+.text-3xl {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--p-text-color, #333);
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--p-text-color, #333);
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .form-section {
+    padding: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+/* MultiSelect Filter Styles */
+:host ::ng-deep .p-multiselect-filter-container {
+  position: relative;
+  overflow: visible !important; /* Không cho scrollbar ở phần filter */
+}
+
+:host ::ng-deep .p-multiselect-filter {
+  padding-right: 2.5rem !important; /* chừa chỗ cho icon bên phải */
+}
+
+:host ::ng-deep .p-multiselect-filter-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color-secondary);
+}
+
+/* Fix scrollbar chỉ xuất hiện ở phần danh sách, không ở search */
+:host ::ng-deep .p-multiselect-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important; /* Panel không scroll */
+}
+
+:host ::ng-deep .p-multiselect-items-wrapper {
+  overflow-y: auto !important; /* Chỉ phần danh sách mới scroll */
+  overflow-x: hidden !important;
+  flex: 1 1 auto !important;
+}
+
+:host ::ng-deep .p-multiselect-header {
+  flex-shrink: 0 !important; /* Header không bị co lại */
+  overflow: visible !important;
+}
+
+/* File Upload – match design */
+.file-upload-dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.file-upload-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 1rem 0;
+}
+
+.file-upload-or {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+}
+
+.file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 0 1rem 0;
+}
+
+.file-upload-btn:hover {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.file-upload-btn-icon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+.file-upload-hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+}

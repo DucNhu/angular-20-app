@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+/* PrimeNG Icons */
+@import 'primeicons/primeicons.css';
+@import 'ng-zorro-antd/ng-zorro-antd.min.css';
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: var(--p-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
+  background: var(--p-surface-0);
+  color: var(--p-text-color);
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 20px;
+}
+
+html {
+  background: var(--p-surface-0);
+  transition: background-color 0.3s;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+input {
+  line-height: 20px
+}
+
+/* Custom border for PrimeNG inputtext */
+.p-select, .p-multiselect {
+  border-width: 1.5px !important;
+}
+
+/* Target header year-month trong nz-range-picker / nz-date-picker */
+.ant-picker-header-view {
+  display: flex !important;
+  flex-direction: row-reverse !important; /* Đảo thứ tự: năm sẽ về sau tháng */
+  justify-content: center !important;     /* Giữ cân giữa */
+  align-items: center !important;
+  gap: 4px !important;                    /* Khoảng cách giữa tháng và năm */
+}
+
+/* Đảm bảo nút month/year hiển thị đúng thứ tự sau khi đảo */
+.ant-picker-header-view > button {
+  order: unset !important;                /* Không cần reorder thêm */
+  margin: 0 !important;
+}
+
+/* Fix cho trường hợp có nút year riêng (nếu hiển thị "2026" riêng) */
+.ant-picker-header-view > button:nth-child(1) {
+  order: 2;  /* Năm về sau */
+}
+
+.ant-picker-header-view > button:nth-child(2) {
+  order: 1;  /* Tháng về trước */
+}
+
+/* Optional: Làm cho text đẹp hơn, thêm khoảng cách */
+.ant-picker-header-view button {
+  font-weight: 500;
+  color: #000;
+}
+
+/* Nếu vẫn thấy "thg" thay vì "Tháng", bạn có thể dùng ::after để thay text (nâng cao) */
+.ant-picker-header-view button[title*="thg"]::after {
+  content: attr(title);  /* Lấy title gốc làm content */
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: visible;
+}
+.ant-picker-header-view button[title*="thg"] {
+  visibility: hidden;  /* Ẩn text gốc */
+}
